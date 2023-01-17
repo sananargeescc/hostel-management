@@ -1,0 +1,15 @@
+{% extends 'admin.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <textarea name="replay" rows="4" cols="50" placeholder="Complaint"></textarea>
+            <br>
+             <button type="submit" class="btn btn-primary">submit</button>
+            </form>
+    </div>
+</div>
+{% endblock %}
+</div>

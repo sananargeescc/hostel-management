@@ -1,0 +1,17 @@
+{% extends 'parent.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card" style="width:25rem; margin:auto;">
+
+    <div class="card-body">
+        <form method="post">
+             {% csrf_token %}
+        {{form|crispy}}
+           <h3>ARE YOU SURE YOU WANT TO DELETE THIS ACOUNT?</h3>
+            <button type="submit" class="btn btn-danger">Delete</button>
+          <a  class="btn btn-primary" href="{% url 'cancel_confirm_parent' %}">Cancel</a>            </form>
+    </div>
+</div>
+{% endblock %}
+</div>
