@@ -24,7 +24,15 @@
                          <td>{{i.name}}</td>
                          <td>{{i.date}}</td>
                          <td>{{i.booking_date}}</td>
-                         <td>{{i.booking_status}}</td>
+                          <td>
+                            {% if i.booking_status == 0 %}
+                                <p class="btn btn-primary">Pending</p>
+                              {% elif i.booking_status == 1 %}
+                                <p class="btn btn-success">Booked</p>
+                                {% elif i.booking_status == 2 %}
+                                <p class="btn btn-danger" >Rejected</p>
+                                {% endif %}
+                         </td>
 
 
 

@@ -19,21 +19,20 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
 
-
 </head>
 <body>
   <div class="container-scroller d-flex">
     <!-- partial:./partials/_sidebar.html -->
 
 
-       <nav class="sidebar sidebar-offcanvas" id="sidebar">
+       <nav class="sidebar sidebar-offcanvas" id="sidebar" >
 
       <ul class="nav">
         <li class="nav-item sidebar-category">
           <p>ADMIN</p>
           <span></span>
         </li>
-         <li class="nav-item">
+         <li class="nav-item" >
           <a class="nav-link" data-toggle="collapse" href="#ui-basi" aria-expanded="false" aria-controls="ui-basic">
             <i class="mdi mdi-home menu-icon"></i>
             <span class="menu-title">Hostel</span>
@@ -217,7 +216,7 @@
       <!-- partial:./partials/_navbar.html -->
 <!--      <nav class="navbar col-lg-12 col-12 px- py-0 py-lg-4 d-flex flex-row" style="background-image: url(https://3dwarehouse.sketchup.com/warehouse/v1.0/content/public/83f57e4c-1411-4f01-a1f4-50430b9209be)" >-->
 
-        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="background-color:#223e9c;" >
+        <div class="navbar-menu-wrapper d-flex align-items-center " style="background-color:#223e9c;" >
 
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize" >
             <span class="mdi mdi-menu" ></span>
@@ -228,7 +227,7 @@
 <!--            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{% static 'staticadmin/images/logo-mini.svg' %}" alt="logo"/></a>-->
 
           </div>
-<a class="btn btn-primary" href="{% url 'view_logout' %}">Logout</a>
+<a class="btn btn-primary" style="margin-left:auto;" href="{% url 'view_logout' %}">Logout</a>
   </div>
 
 <!--          <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Welcome back, Brandon Haynes</h4>-->
@@ -329,6 +328,7 @@
 <!--                </a>-->
 <!--              </div>-->
 <!--            </li>-->
+
 <!--          </ul>-->
 
 <!--          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">-->
@@ -384,6 +384,7 @@
 <!--                <i class="mdi mdi-clock-outline"></i>-->
 <!--              </a>-->
 <!--            </li>-->
+
 <!--          </ul>-->
 <!--        </div>-->
 <!--      </nav>-->

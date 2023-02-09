@@ -162,48 +162,9 @@ class  booking_form(forms.ModelForm):
         fields = "__all__"
         exclude = ("booking_status",)
 
-# class AddFee(forms.ModelForm):
-#     student = forms.ModelChoiceField(queryset=Student_Registration.objects.filter(approval_status=True))
-#     from_date = forms.DateField(widget=DateInput)
-#     to_date = forms.DateField(widget=DateInput)
-#     room_rent = forms.CharField(
-#         widget=forms.TextInput())
-#     mess_bill = forms.CharField(
-#         widget=forms.TextInput())
-#     class Meta:
-#         model = Fee
-#         fields = ('student', 'from_date', 'to_date', 'room_rent', 'mess_bill')
-#
-#     def clean(self):
-#         cleaned_data = super().clean()
-#         from_date = cleaned_data.get("from_date")
-#         to_date = cleaned_data.get("to_date")
-#
-#         if (from_date > datetime.date.today()):
-#             raise forms.ValidationError("Invalid From Date")
-#         if to_date <= from_date or to_date > datetime.date.today():
-#             raise forms.ValidationError("Invalid To Date")
-#
-#         from_day = from_date.strftime("%d")
-#         from_m = from_date.strftime("%m")
-#         to_day = to_date.strftime("%d")
-#         print(from_m, to_day)
-#
-#         if int(from_day) != 1:
-#             raise forms.ValidationError('Invalid From Date')
-#         if int(from_m) == 2:
-#             if int(to_day) not in [29, 28]:
-#                 raise forms.ValidationError('Invalid To Date')
-#
-#         else:
-#
-#             if int(from_m) in [1, 3, 5, 7, 8, 10, 12]:
-#                 if int(to_day) != 31:
-#                     raise forms.ValidationError('Invalid To Date')
-#
-#             elif int(from_m) == [4, 6, 9, 11]:
-#
-#                 if int(to_day) != 30:
-#                     raise forms.ValidationError('Invalid To Date')
-#
-#         return cleaned_data
+    def clean(self):
+        cleaned_data = super().clean()
+        date = cleaned_data.get("date")
+        booking_date = cleaned_data.get("booking_date")
+        if booking_date < date:
+            raise forms.ValidationError("End date should be greater than start date")

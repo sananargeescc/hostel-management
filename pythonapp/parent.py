@@ -13,12 +13,14 @@ def view_parent_hostel(request):
 
 @login_required(login_url='log')
 def view_parent_booking(request):
-    data = Booking.objects.all()
+    u = Parent_Registration.objects.get(user=request.user)
+    data = Booking.objects.filter(name=u.student_name)
     return render(request, 'parent_view_booking.html', {'data': data})
 
 @login_required(login_url='log')
 def view_parent_payment(request):
-    data = Payment.objects.all()
+    u = Parent_Registration.objects.get(user=request.user)
+    data = Payment.objects.filter(student_name=u.student_name)
     return render(request, 'parent_view_payment.html', {'data': data})
 
 @login_required(login_url='log')
@@ -28,7 +30,8 @@ def view_parent_notification(request):
 
 @login_required(login_url='log')
 def view_parent_attendance(request):
-    data = Attendance.objects.all()
+    u=Parent_Registration.objects.get(user=request.user)
+    data = Attendance.objects.filter(student=u.student_name)
     return render(request, 'parent_view_attendance.html', {'data': data})
 
 @login_required(login_url='log')

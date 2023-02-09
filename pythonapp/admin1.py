@@ -283,7 +283,7 @@ def complaint_replay(request,id):
 @login_required(login_url='log')
 def approve_booking(request,id):
     booking1 = Booking.objects.get(id=id)
-    print(booking1)
+    # print(booking1)
     booking1.booking_status = 1
     booking1.save()
     messages.info(request,'Student Approved Successfully')

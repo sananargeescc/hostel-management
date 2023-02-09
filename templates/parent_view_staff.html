@@ -13,7 +13,7 @@
                             <th>STAFF NAME</th>
                             <th>CONTACT NUMBER</th>
                             <th>ADDRESS</th>
-                           <th>EDIT/DELETE</th>
+
                         </tr>
                       </thead>
                       <tbody>
@@ -25,9 +25,7 @@
                          <td>{{i.address}}</td>
 
 
-                            <td> <a href = "{% url 'staff_update' i.id %}" class="btn btn-success">UPDATE</a>
-                           <a href = "{% url 'staff_delete' i.id %}" class="btn btn-danger">DELETE</a>
-                          </td>
+
 
                       {% endfor %}
                       </tbody>

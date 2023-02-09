@@ -11,9 +11,12 @@
                         <tr>
                             <th>sl.no</th>
                             <th>STUDENT NAME</th>
+                            <th>ROOM RENT</th>
+                              <th>MESS BILL</th>
+                            <th>AMOUNT</th>
+                            <th>FROM DATE</th>
+                            <th>TO DATE</th>
                             <th>PAYMENT STATUS</th>
-                            <th>BALANCE</th>
-                            <th>MONTH</th>
 
                         </tr>
                       </thead>
@@ -22,9 +25,21 @@
                         <tr>
                          <td>{{forloop.counter}}</td>
                          <td>{{i.student_name}}</td>
-                         <td>{{i.payment_status}}</td>
-                         <td>{{i.balance}}</td>
-                         <td>{{i.Month}}</td>
+                              <td>{{i.room_rent}}</td>
+                         <td>{{i.mess_bill}}</td>
+                         <td>{{i.amount}}</td>
+                         <td>{{i.from_date}}</td>
+                            <td>{{i.to_date}}</td>
+                            <td>
+                                {% if i.status == 0 %}
+                                <a class="btn btn-primary" href="{% url 'approve_payment' i.id %}">Paid</a>
+                                 <a class="btn btn-danger" href="{% url 'reject_payment' i.id %}">Not Paid</a>
+                                {% elif i.status == 1 %}
+                                <p class="btn btn-success">Paid</p>
+                                {% elif i.status == 2 %}
+                                <p class="btn btn-danger" >Not Paid</p>
+                                {% endif %}
+                            </td>
 
                          {% endfor %}
                       </tbody>

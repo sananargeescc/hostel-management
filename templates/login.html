@@ -30,6 +30,21 @@
 
         <!-- Favicon  -->
         <link rel="icon" href="images/favicon.png">
+              <style>
+
+ .form-control-submit-button{
+  border-radius: 12px;
+  background-color: white;
+  color: black;
+  border: 2px solid #223e9c;
+}
+
+.form-control-submit-button:hover {
+  background-color: #223e9c;
+  color: white;
+  border: 2px solid #223e9c;
+}
+        </style>
     </head>
     <body>
 
@@ -80,22 +95,24 @@
 <!--        </nav> &lt;!&ndash; end of navbar &ndash;&gt;-->
 <!--        &lt;!&ndash; end of navigation &ndash;&gt;-->
 
+<center><div class="col-lg-12 grid-margin stretch-card">
+              <div class="card" style="box-shadow: 2px 4px 8px 2px rgba(0,0,0,0.2); margin-left:15%;margin-right:15%;">
+                <div class="card-body">
 
         <!-- Header -->
-        <header class="ex-header">
-            <div class="container">
-                <div class="row">
+        <header class="d-flex flex-wrap justify-content-center py-1 mb-1 border-bottom">
+            <div class="container" >
+                <div class="row" >
                     <div class="col-xl-10 offset-xl-1">
-                        <h1 class="text-center" >Log In</h1>
+                        <h1 class="text-center" style="color:#223e9c">Log In</h1>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
         </header> <!-- end of ex-header -->
         <!-- end of header -->
 
-
         <!-- Basic -->
-        <div class="ex-form-1 pt-5 pb-5">
+        <div class="ex-form-1 pt-3 pb-3">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 offset-xl-3">
@@ -107,17 +124,19 @@
                             <form method="post">
                                 {% csrf_token %}
                                 <div class="mb-4 form-floating">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Enter user name" name="uname">
                                     <label for="floatingInput">User Name</label>
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Enter user name" name="uname">
+
                                 </div>
                                 <div class="mb-4 form-floating">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="pass">
                                     <label for="floatingPassword">Password</label>
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="pass">
+
                                 </div>
-                                <div class="mb-4 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">I agree with the site's stated <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms & Conditions</a></label>
-                                </div>
+<!--                                <div class="mb-4 form-check">-->
+<!--                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--                                    <label class="form-check-label" for="exampleCheck1">I agree with the site's stated <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms & Conditions</a></label>-->
+<!--                                </div>-->
                                 <button type="submit" class="form-control-submit-button">Log in</button>
                                 <div>
                                     {% for message in messages %}
@@ -138,76 +157,76 @@
 
 
         <!-- Footer -->
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer-col first">
-                            <h6>About Website</h6>
-                            <p class="p-small">Proin ut felis purus vestibulum in orci molestie, efficitur lacus ac pellentesque elit. Fusce mollis laoreet lobortis nulla ac efficitur lacus ac </p>
-                        </div> <!-- end of footer-col -->
-                        <div class="footer-col second">
-                            <h6>Links</h6>
-                            <ul class="list-unstyled li-space-lg p-small">
-                                <li>Important: <a href="terms.html">Terms & Conditions</a>, <a href="privacy.html">Privacy Policy</a></li>
-                                <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a></li>
-                                <li>Menu: <a href="#header">Home</a>, <a href="#features">Features</a>, <a href="#details">Details</a>, <a href="#pricing">Pricing</a></li>
-                            </ul>
-                        </div> <!-- end of footer-col -->
-                        <div class="footer-col third">
-                            <span class="fa-stack">
-                                <a href="#your-link">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-facebook-f fa-stack-1x"></i>
-                                </a>
-                            </span>
-                            <span class="fa-stack">
-                                <a href="#your-link">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-twitter fa-stack-1x"></i>
-                                </a>
-                            </span>
-                            <span class="fa-stack">
-                                <a href="#your-link">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-pinterest-p fa-stack-1x"></i>
-                                </a>
-                            </span>
-                            <span class="fa-stack">
-                                <a href="#your-link">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-instagram fa-stack-1x"></i>
-                                </a>
-                            </span>
-                            <p class="p-small">Quam posuerei pellent esque vam <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a></p>
-                        </div> <!-- end of footer-col -->
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of footer -->
-        <!-- end of footer -->
+<!--        <div class="footer">-->
+<!--            <div class="container">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-12">-->
+<!--                        <div class="footer-col first">-->
+<!--                            <h6>About Website</h6>-->
+<!--                            <p class="p-small">Proin ut felis purus vestibulum in orci molestie, efficitur lacus ac pellentesque elit. Fusce mollis laoreet lobortis nulla ac efficitur lacus ac </p>-->
+<!--                        </div> &lt;!&ndash; end of footer-col &ndash;&gt;-->
+<!--                        <div class="footer-col second">-->
+<!--                            <h6>Links</h6>-->
+<!--                            <ul class="list-unstyled li-space-lg p-small">-->
+<!--                                <li>Important: <a href="terms.html">Terms & Conditions</a>, <a href="privacy.html">Privacy Policy</a></li>-->
+<!--                                <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a></li>-->
+<!--                                <li>Menu: <a href="#header">Home</a>, <a href="#features">Features</a>, <a href="#details">Details</a>, <a href="#pricing">Pricing</a></li>-->
+<!--                            </ul>-->
+<!--                        </div> &lt;!&ndash; end of footer-col &ndash;&gt;-->
+<!--                        <div class="footer-col third">-->
+<!--                            <span class="fa-stack">-->
+<!--                                <a href="#your-link">-->
+<!--                                    <i class="fas fa-circle fa-stack-2x"></i>-->
+<!--                                    <i class="fab fa-facebook-f fa-stack-1x"></i>-->
+<!--                                </a>-->
+<!--                            </span>-->
+<!--                            <span class="fa-stack">-->
+<!--                                <a href="#your-link">-->
+<!--                                    <i class="fas fa-circle fa-stack-2x"></i>-->
+<!--                                    <i class="fab fa-twitter fa-stack-1x"></i>-->
+<!--                                </a>-->
+<!--                            </span>-->
+<!--                            <span class="fa-stack">-->
+<!--                                <a href="#your-link">-->
+<!--                                    <i class="fas fa-circle fa-stack-2x"></i>-->
+<!--                                    <i class="fab fa-pinterest-p fa-stack-1x"></i>-->
+<!--                                </a>-->
+<!--                            </span>-->
+<!--                            <span class="fa-stack">-->
+<!--                                <a href="#your-link">-->
+<!--                                    <i class="fas fa-circle fa-stack-2x"></i>-->
+<!--                                    <i class="fab fa-instagram fa-stack-1x"></i>-->
+<!--                                </a>-->
+<!--                            </span>-->
+<!--                            <p class="p-small">Quam posuerei pellent esque vam <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a></p>-->
+<!--                        </div> &lt;!&ndash; end of footer-col &ndash;&gt;-->
+<!--                    </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--                </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; end of container &ndash;&gt;-->
+<!--        </div> &lt;!&ndash; end of footer &ndash;&gt;-->
+<!--        &lt;!&ndash; end of footer &ndash;&gt;-->
 
 
-        <!-- Copyright -->
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <p class="p-small">Copyright © <a href="#your-link">Your name</a></p>
-                    </div> <!-- end of col -->
-                    <div class="col-lg-6">
-                        <p class="p-small">Distributed By<a href="https://themewagon.com/"> Themewagon</a></p>
-                    </div> <!-- end of col -->
-                </div> <!-- enf of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of copyright -->
-        <!-- end of copyright -->
+<!--        &lt;!&ndash; Copyright &ndash;&gt;-->
+<!--        <div class="copyright">-->
+<!--            <div class="container">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-6">-->
+<!--                        <p class="p-small">Copyright © <a href="#your-link">Your name</a></p>-->
+<!--                    </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--                    <div class="col-lg-6">-->
+<!--                        <p class="p-small">Distributed By<a href="https://themewagon.com/"> Themewagon</a></p>-->
+<!--                    </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--                </div> &lt;!&ndash; enf of row &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; end of container &ndash;&gt;-->
+<!--        </div> &lt;!&ndash; end of copyright &ndash;&gt;-->
+<!--        &lt;!&ndash; end of copyright &ndash;&gt;-->
 
 
-        <!-- Back To Top Button -->
-        <button onclick="topFunction()" id="myBtn">
-            <img src="{% static 'images/up-arrow.png' %}" alt="alternative">
-        </button>
+<!--        &lt;!&ndash; Back To Top Button &ndash;&gt;-->
+<!--        <button onclick="topFunction()" id="myBtn">-->
+<!--            <img src="{% static 'images/up-arrow.png' %}" alt="alternative">-->
+<!--        </button>-->
         <!-- end of back to top button -->
 
         <!-- Scripts -->
@@ -216,5 +235,7 @@
         <script src="{% static 'js/purecounter.min.js' %}"></script> <!-- Purecounter counter for statistics numbers -->
         <script src="{% static 'js/replaceme.min.js' %}"></script> <!-- ReplaceMe for rotating text -->
         <script src="{% static 'js/scripts.js' %}"></script> <!-- Custom scripts -->
+                </div></div></div>
+</center>
     </body>
 </html>
