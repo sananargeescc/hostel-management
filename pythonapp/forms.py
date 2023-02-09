@@ -96,6 +96,11 @@ class AddFee(forms.ModelForm):
         model = Fee
         fields = "__all__"
 
+    def clean(self):
+        cleaned_data = super().clean()
+        date = cleaned_data.get("date")
+        if date != datetime.date.today():
+            raise forms.ValidationError("date should be today date")
 
 class fee_form(forms.ModelForm):
     date = forms.DateField(widget=DateInput)
@@ -103,6 +108,11 @@ class fee_form(forms.ModelForm):
         model = Fee
         fields = "__all__"
 
+    def clean(self):
+        cleaned_data = super().clean()
+        date = cleaned_data.get("date")
+        if date != datetime.date.today():
+            raise forms.ValidationError("date should be today date")
 
 class payment_form(forms.ModelForm):
     from_date = forms.DateField(widget=DateInput)
@@ -112,11 +122,25 @@ class payment_form(forms.ModelForm):
         fields = "__all__"
         exclude = ("status",)
 
+    def clean(self):
+        cleaned_data = super().clean()
+        from_date = cleaned_data.get("from_date")
+        to_date = cleaned_data.get("to_date")
+        if to_date < from_date:
+            raise forms.ValidationError("End date should be greater than start date")
+
+
 class notification_form(forms.ModelForm):
     date = forms.DateField(widget=DateInput)
     class Meta:
         model = Notification
         fields = "__all__"
+
+    def clean(self):
+        cleaned_data = super().clean()
+        date = cleaned_data.get("date")
+        if date != datetime.date.today():
+            raise forms.ValidationError("date should be today date")
 
 att_choice = (
     ('present','present'),
@@ -128,6 +152,14 @@ class attendance_form(forms.ModelForm):
     class Meta:
         model = Attendance
         fields = "__all__"
+
+    def clean(self):
+        cleaned_data = super().clean()
+        date = cleaned_data.get("date")
+        if date != datetime.date.today():
+            raise forms.ValidationError("date should be today date")
+
+
 
 class  staff_form(forms.ModelForm):
     phone = forms.CharField(validators=[phone_number_validation])
@@ -142,6 +174,11 @@ class  complaint_form(forms.ModelForm):
         fields = "__all__"
         exclude = ("replay","user",)
 
+    def clean(self):
+        cleaned_data = super().clean()
+        date = cleaned_data.get("date")
+        if date != datetime.date.today():
+            raise forms.ValidationError("date should be today date")
 class  replay_form(forms.ModelForm):
     class Meta:
         model = Complaint
@@ -155,7 +192,7 @@ class  review_form(forms.ModelForm):
         fields = "__all__"
 
 class  booking_form(forms.ModelForm):
-    date = forms.DateField(widget=DateInput)
+    joining_date = forms.DateField(widget=DateInput)
     booking_date = forms.DateField(widget=DateInput)
     class Meta:
         model = Booking
@@ -164,7 +201,10 @@ class  booking_form(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
-        date = cleaned_data.get("date")
         booking_date = cleaned_data.get("booking_date")
-        if booking_date < date:
-            raise forms.ValidationError("End date should be greater than start date")
+        joining_date = cleaned_data.get("joining_date")
+        if joining_date < booking_date:
+            raise forms.ValidationError("Joining date should be greater than Booking date")
+        if booking_date != datetime.date.today():
+            raise forms.ValidationError("Booking date must be Today date")
+

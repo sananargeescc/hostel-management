@@ -133,8 +133,9 @@ class Review(models.Model):
 
 class Booking(models.Model):
     name = models.ForeignKey(Student_Registration, on_delete=models.DO_NOTHING)
-    date = models.DateField()
+
     booking_date = models.DateField()
+    joining_date = models.DateField()
     booking_status = models.IntegerField(default=0)
 
 

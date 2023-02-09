@@ -11,8 +11,9 @@
                         <tr>
                             <th>sl.no</th>
                             <th>NAME</th>
-                            <th>DATE</th>
+
                             <th>BOOKING DATE</th>
+                            <th>JOINING DATE</th>
                             <th>BOOKING STATUS</th>
                             <th>EDIT/DELETE</th>
                         </tr>
@@ -22,8 +23,9 @@
                         <tr>
                          <td>{{forloop.counter}}</td>
                          <td>{{i.name}}</td>
-                         <td>{{i.date}}</td>
+
                          <td>{{i.booking_date}}</td>
+                            <td>{{i.joining_date}}</td>
                          <td>
                             {% if i.booking_status == 0 %}
                                 <p class="btn btn-primary">Pending</p>
